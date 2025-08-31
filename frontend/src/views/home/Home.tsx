@@ -1,13 +1,25 @@
 import React, { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { useMobile } from "../../hooks/hooks";
+import type { RootState } from '../../store/store';                  
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import DarkModeToggle from "../../components/ui/DarkModeToggle";
+import SidebarToggle from "../../components/ui/SidebarToggle";
+import Sidebar from "../../components/ui/Sidebar";
 
-const items = Array.from({ length: 6 }, (_, i) => i + 1);
+//const items = Array.from({ length: 6 }, (_, i) => i + 1);
+
+const items = ['photos', 'blogs', 'articles', 'news', 'updates', 'stories'];
 
 const Home: React.FC = () => {
   const columnRefs = useRef<Array<HTMLDivElement | null>>([]);
   const tweensRef = useRef<gsap.core.Tween[]>([]);
+  const [openSidebar, setOpenSidebar] = React.useState<boolean>(false);
   const isMobile = useMobile();
+  const user = useSelector((state: RootState) => state.user);
+  const theme = useSelector((state: RootState) => state.theme);
+  const navigate = useNavigate();
 
   useLayoutEffect(() => {
     // Kill any previous tweens
@@ -101,6 +113,22 @@ const handleMouseLeave = (colIndex: number, e: React.MouseEvent<HTMLDivElement>)
 };
 
   return (
+    <>
+    <Sidebar open={openSidebar} setOpen={setOpenSidebar} />
+    <div
+    style={{
+        position: "fixed",
+        top: 16,
+        right: 16,
+        zIndex: 9999,
+        display: "flex",
+            alignItems: "center",
+        gap: 16,
+    }}
+    >
+        <DarkModeToggle />
+        <SidebarToggle open={openSidebar} setOpen={setOpenSidebar} />
+    </div>
     <div
       style={{
         display: "flex",
@@ -110,21 +138,21 @@ const handleMouseLeave = (colIndex: number, e: React.MouseEvent<HTMLDivElement>)
         padding: "16px",
         alignItems: "flex-start",
         overflow: "hidden",
-        backgroundColor: "#1a1a1a",
+        backgroundColor: theme.colors.background,
       }}
     >
       {Array.from({ length: isMobile ? 1 : 3 }).map((_, colIndex) => {
-        const colItems = items.map((item) => (
+        const colItems = items.map((item, i) => (
           <div
             key={`${colIndex}-${item}`}
             onMouseEnter={(e) => handleMouseEnter(colIndex, e)}
             onMouseLeave={(e) => handleMouseLeave(colIndex, e)}
+            onClick={() => navigate(`/${item}`)}
             className="scroll-item"
             style={{
               height: `${150 + Math.random() * 150}px`,
               borderRadius: "12px",
-              //background: `hsl(${(colIndex * 60 + item * 30) % 360}, 70%, 75%)`,
-              background: `url(/image${item}.jpg) center/cover no-repeat`,
+              background: `url(/image${i+1}.jpg) center/cover no-repeat`,
               backgroundSize: "102%",
               display: "flex",
               justifyContent: "center",
@@ -140,7 +168,7 @@ const handleMouseLeave = (colIndex: number, e: React.MouseEvent<HTMLDivElement>)
               position: "relative"
             }}
           >
-            Item {item}
+           {item}
           </div>
         ));
 
@@ -166,6 +194,7 @@ const handleMouseLeave = (colIndex: number, e: React.MouseEvent<HTMLDivElement>)
         );
       })}
     </div>
+    </>
   );
 };
 
