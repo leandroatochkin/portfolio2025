@@ -1,4 +1,3 @@
-import React from 'react'
 import { useParams } from 'react-router-dom'
 //import { useGetPublicationsByCategoryQuery } from '../../api/publicationsApi';
 import PublicationCard from '../../components/cards/PublicationCard';
@@ -48,7 +47,7 @@ const mockPublications: Publication[] = [
 ];
 
 
-type Category = 'photos' | 'blogs' | 'articles' | 'news' | 'updates' | 'stories' | undefined;
+export type Category = 'photos' | 'blogs' | 'articles' | 'news' | 'updates' | 'stories' | undefined;
 
 const CategoryView = () => {
 

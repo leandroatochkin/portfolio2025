@@ -28,7 +28,7 @@ export const commentsApi = createApi({
         url: `comments/${publicationId}`,
         method: 'GET',
       }),
-      providesTags: (result, error, id) => [{ type: "Comments", id }],
+      providesTags: (_result, _error, id) => [{ type: "Comments", id }],
     }),
      postCommentInPublication: builder.mutation<Comment, Partial<Comment>>({
       query: (body) => ({
@@ -57,7 +57,7 @@ export const commentsApi = createApi({
           patchResult.undo(); // rollback if failed
         }
       },
-      invalidatesTags: (result, error, arg) => [
+      invalidatesTags: (_result, _error, arg) => [
         { type: "Comments", id: arg.publicationId },
       ],
     }),

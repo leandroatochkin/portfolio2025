@@ -112,8 +112,6 @@ const handleMouseLeave = (colIndex: number, e: React.MouseEvent<HTMLDivElement>)
       style={{
         display: "flex",
         gap: "16px",
-        width: "100vw",
-        height: "100vh",
         padding: "16px",
         alignItems: "flex-start",
         overflow: "hidden",

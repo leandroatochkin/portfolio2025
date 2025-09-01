@@ -39,7 +39,7 @@ export const publicationsApi = createApi({
         url: `publications/${category}`,
         method: 'GET',
       }),
-      providesTags: (result, error, id) => [{ type: "Publications", id }],
+      providesTags: (_result, _error, id) => [{ type: "Publications", id }],
     }),
   })
 

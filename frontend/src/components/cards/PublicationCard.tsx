@@ -67,9 +67,11 @@ const PublicationCard: React.FC<PublicationCardProps> = ({
     >
         <div
         style={{
-            width: '95%',
-            height: '40%',
+            width: '50%',
             background: theme.colors.surface,
+            borderBottomRightRadius: theme.borderRadius,
+            borderTopRightRadius: theme.borderRadius,
+            padding: '8px',
         }}
         >
             <h2

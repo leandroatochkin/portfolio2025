@@ -15,7 +15,7 @@ interface CommentSectionProps {
     publicationType: 'post' | 'article' | 'photo';
 }
 
-const CommentsSection: React.FC<CommentSectionProps> = ({publicationId, publicationType}) => {
+const CommentsSection: React.FC<CommentSectionProps> = ({publicationId}) => {
 const [newComment, setNewComment] = React.useState<Comment>({
     publicationId: publicationId,
     user: '',
@@ -27,8 +27,6 @@ const [newComment, setNewComment] = React.useState<Comment>({
 const user = useSelector((state: RootState) => state.user);
 const theme = useSelector((state: RootState) => state.theme);
 
-
-console.log(theme)
 
   const { data: comments = [{
     id: '1',
@@ -72,7 +70,15 @@ if(isLoading || isPosting) return <div style={loadingOrErrorContainerStyle}><Fad
 if(error && !comments) return <div style={loadingOrErrorContainerStyle}>Error loading comments</div>
 
   return (
-    <div>
+    <div
+    style={{
+        background: theme.colors.surface,
+        color: theme.colors.text,
+        padding: '20px',
+        width: '95%',
+        borderRadius: theme.borderRadius,
+    }}
+    >
         <h2>Comments</h2>
         {comments.map((comment) => (
             <div key={comment.id} style={{
@@ -101,7 +107,7 @@ if(error && !comments) return <div style={loadingOrErrorContainerStyle}>Error lo
                     placeholder="Write your comment here..."
                     onChange={(e) => setNewComment({...newComment, comment: e.target.value} as Comment)}
                     style={{ 
-                        width: '100%', 
+                        width: '80%', 
                         padding: '10px', 
                         borderRadius: '5px', 
                         background: theme.colors.background, 
