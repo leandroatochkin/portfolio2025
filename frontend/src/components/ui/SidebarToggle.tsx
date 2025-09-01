@@ -1,4 +1,6 @@
 import React from 'react'
+import { useSelector } from "react-redux";
+import type { RootState } from "../../store/store";
 
 interface SidebarToggleProps {
     setOpen?: (open: boolean) => void;
@@ -6,6 +8,9 @@ interface SidebarToggleProps {
 }
 
 export const SidebarToggle: React.FC<SidebarToggleProps> = ({ setOpen, open }) => {
+const themeMode = useSelector((state: RootState) => state.theme.mode); 
+
+
   return (
     <div>
     <style>
@@ -32,7 +37,7 @@ export const SidebarToggle: React.FC<SidebarToggleProps> = ({ setOpen, open }) =
 .bars {
   width: 100%;
   height: 4px;
-  background-color: rgb(253, 255, 243);
+  background-color: ${themeMode === 'dark' ? 'white' : 'black'};
   border-radius: 5px;
   transition-duration: .3s;
 }
