@@ -4,20 +4,14 @@ import { useMobile } from "../../hooks/hooks";
 import type { RootState } from '../../store/store';                  
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import DarkModeToggle from "../../components/ui/DarkModeToggle";
-import SidebarToggle from "../../components/ui/SidebarToggle";
-import Sidebar from "../../components/ui/Sidebar";
-
-//const items = Array.from({ length: 6 }, (_, i) => i + 1);
 
 const items = ['photos', 'blogs', 'articles', 'news', 'updates', 'stories'];
 
 const Home: React.FC = () => {
   const columnRefs = useRef<Array<HTMLDivElement | null>>([]);
   const tweensRef = useRef<gsap.core.Tween[]>([]);
-  const [openSidebar, setOpenSidebar] = React.useState<boolean>(false);
   const isMobile = useMobile();
-  const user = useSelector((state: RootState) => state.user);
+  //const user = useSelector((state: RootState) => state.user);
   const theme = useSelector((state: RootState) => state.theme);
   const navigate = useNavigate();
 
@@ -113,22 +107,7 @@ const handleMouseLeave = (colIndex: number, e: React.MouseEvent<HTMLDivElement>)
 };
 
   return (
-    <>
-    <Sidebar open={openSidebar} setOpen={setOpenSidebar} />
-    <div
-    style={{
-        position: "fixed",
-        top: 16,
-        right: 16,
-        zIndex: 9999,
-        display: "flex",
-            alignItems: "center",
-        gap: 16,
-    }}
-    >
-        <DarkModeToggle />
-        <SidebarToggle open={openSidebar} setOpen={setOpenSidebar} />
-    </div>
+    <>    
     <div
       style={{
         display: "flex",
@@ -147,7 +126,7 @@ const handleMouseLeave = (colIndex: number, e: React.MouseEvent<HTMLDivElement>)
             key={`${colIndex}-${item}`}
             onMouseEnter={(e) => handleMouseEnter(colIndex, e)}
             onMouseLeave={(e) => handleMouseLeave(colIndex, e)}
-            onClick={() => navigate(`/${item}`)}
+            onClick={() => navigate(`/${item}`, {viewTransition: true})}
             className="scroll-item"
             style={{
               height: `${150 + Math.random() * 150}px`,

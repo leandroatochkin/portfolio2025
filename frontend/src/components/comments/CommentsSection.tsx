@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { 
     useGetCommentsByPublicationIdQuery,
     usePostCommentInPublicationMutation
 } from '../../api/commentsApi'
 import type { Comment } from '../../api/commentsApi';
 import { FadeLoader } from 'react-spinners';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, } from 'react-redux';
 import RatingDisplay from './RatingDisplay';
 import RatingSelector from './RatingSelector';
 import type { RootState } from '../../store/store';
-import { toggleTheme } from '../../store/slices/Theme';
 
 interface CommentSectionProps {
     publicationId: string;

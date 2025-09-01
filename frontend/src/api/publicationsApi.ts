@@ -1,12 +1,23 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { Comment } from './commentsApi';
 
+export interface Details {
+  id: string;
+  title: string;
+  subtitle?: string;
+  author?: string;
+  date?: string;
+  tags?: string[];
+  category?: string;
+}
+
 export interface Publication  {
   id: string;
   userId: string;
   authorName: string;
-  publicationType: 'post' | 'article' | 'photo';
+  publicationType: 'post' | 'article' | 'photo' | 'news' | 'update' | 'story' | 'blog';
   imageUrl?: string;
+  thumbnail?: string;
   description: string;
   createdAt: string;
   replies?: Comment[];

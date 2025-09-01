@@ -2,23 +2,39 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import NotFoundPage from './views/notFound/NotFound'
 //import PhotoPost from './components/publications/PhotoPost'
 import Home from './views/home/Home'
-import Layout from './components/ui/Layout'
 import About from './views/about/About'
+import CategoryView from './views/category/CategoryView'
+import Dashboard from './components/dashboard/Dashboard'
 
 function App() {
 
-const router = createBrowserRouter([
+  const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />, // central layout with transitions
+    element: (
+      <Dashboard>
+      <Home />
+      </Dashboard>
+    ),
     errorElement: <NotFoundPage />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "about", element: <About /> },
-    ],
   },
-]);
-
+  {
+    path: "/about",
+    element: (
+      <About />
+    ),
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/:category",
+    element: (
+      <Dashboard>
+      <CategoryView />
+      </Dashboard>
+    ),
+    errorElement: <NotFoundPage />,
+  },
+])
 
 
   return (
