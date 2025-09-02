@@ -26,10 +26,10 @@ function App() {
     errorElement: <NotFoundPage />,
   },
   {
-    path: "/:category",
+    path: "/:section",
     element: (
       <Dashboard>
-      <CategoryView />
+      <PublicationViewer />
       </Dashboard>
     ),
     errorElement: <NotFoundPage />,

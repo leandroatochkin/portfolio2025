@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 //import { useGetPublicationsByCategoryQuery } from '../../api/publicationsApi';
-import PublicationCard from '../../components/cards/PublicationCard';
+import PublicationCard from '../../components/cards/SkillCard';
 import type { Publication } from '../../api/publicationsApi';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../store/store';

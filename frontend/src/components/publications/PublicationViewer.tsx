@@ -1,15 +1,20 @@
 import { useParams } from 'react-router-dom'
-import PhotoPost from './category/PhotoPost';
+import Skills from './category/Skills';
+import Projects from './category/Projects';
 
-type PublicationType = 'photo' | 'blog' | 'article' | 'news' | 'update' | 'story' | 'post' | undefined;
+
+
+type Section = 'skills' | 'certificates' | 'projects' | 'resume' | 'contact' | 'stories' | undefined
 
 const PublicationViewer = () => {
-const { publication } = useParams<{ publication: PublicationType }>();
+const { section } = useParams<{ section: Section }>();
 
-const publicationMapper = (publicationType: PublicationType) => {
-    switch (publicationType) {
-        case 'photo':
-            return <PhotoPost />;
+const publicationMapper = (section: Section) => {
+    switch (section) {
+        case 'skills':
+            return <Skills />;
+        case 'projects':
+            return <Projects />
         // Add cases for other categories like 'blogs', 'articles', etc.
         default:
             return <div>Category not found</div>;
@@ -19,7 +24,7 @@ const publicationMapper = (publicationType: PublicationType) => {
   return (
     <>
     {
-        publicationMapper(publication)
+        publicationMapper(section)
     }
     </>
   )

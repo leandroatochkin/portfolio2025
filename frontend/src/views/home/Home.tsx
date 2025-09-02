@@ -5,7 +5,7 @@ import type { RootState } from '../../store/store';
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const items = ['photos', 'blogs', 'articles', 'news', 'updates', 'stories'];
+export const items = ['skills', 'certificates', 'projects', 'resume', 'contact', 'stories'];
 
 const Home: React.FC = () => {
   const columnRefs = useRef<Array<HTMLDivElement | null>>([]);
