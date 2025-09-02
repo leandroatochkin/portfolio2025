@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import NotFoundPage from './views/notFound/NotFound'
 import Home from './views/home/Home'
 import About from './views/about/About'
-import CategoryView from './views/category/CategoryView'
 import Dashboard from './components/dashboard/Dashboard'
 import PublicationViewer from './components/publications/PublicationViewer'
 

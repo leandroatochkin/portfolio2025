@@ -6,18 +6,20 @@ import type { RootState } from "../../store/store";
 
 interface SidebarProps {
   open: boolean;
+  setOpen: (open: boolean) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ open }) => {
+const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const theme = useSelector((state: RootState) => state.theme);
   const navigate = useNavigate();
   const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const sidebarLinks = [
-    { name: "About", link: "/about" },
+    { name: "Skills", link: "/skills" },
+    { name: "Projects", link: "/projects" },
+    { name: "Resume", link: "/resume" },
     { name: "Contact", link: "/contact" },
-    { name: "Settings", link: "/settings" },
   ];
 
   useLayoutEffect(() => {
@@ -143,7 +145,10 @@ const handleLeave = (i: number) => {
           key={i}
           onMouseEnter={() => handleEnter(i)}
           onMouseLeave={() => handleLeave(i)}
-          onClick={() => navigate(link.link, {viewTransition: true})}
+          onClick={() => {
+            navigate(link.link, {viewTransition: true})
+            setOpen(false)
+          }}
         >
           <h1
             style={{

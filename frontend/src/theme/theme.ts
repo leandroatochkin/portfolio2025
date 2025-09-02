@@ -6,7 +6,7 @@ export const lightTheme = {
         primary: '#6200ee',
         secondary: '#03dac6',
         error: '#b00020',
-        surface: '#f5f5f5',
+        surface: '#f9f9f9',
         onPrimary: '#ffffff',
         onSecondary: '#000000',
         onError: '#ffffff',

@@ -20,7 +20,7 @@ const bgSec = theme.colors.backgroundSecondary
 
   return (
     <>
-    <Sidebar open={openSidebar} />
+    <Sidebar open={openSidebar} setOpen={setOpenSidebar}/>
     <div
     style={{
         position: "fixed",
@@ -40,7 +40,7 @@ const bgSec = theme.colors.backgroundSecondary
         position: 'absolute',
         top: '0',
         left: '0',
-        height: '100dvh',
+        minHeight: '100dvh',
         width: '100vw',
         backgroundColor: theme.colors.background,
         backgroundImage: `linear-gradient(0deg, transparent 24%, ${bgSec} 25%, ${bgSec} 26%, transparent 27%,transparent 74%, ${bgSec} 75%, ${bgSec} 76%, transparent 77%,transparent),
