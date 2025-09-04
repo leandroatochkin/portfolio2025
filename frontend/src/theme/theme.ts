@@ -23,6 +23,7 @@ export const lightTheme = {
         large: '1.5rem',
         xlarge: '2rem',
         xxlarge: '3rem',
+        xxxlarge: '6rem'
     },
     spacing: {
         small: '0.5rem',
@@ -30,6 +31,7 @@ export const lightTheme = {
         large: '2rem',
         xlarge: '3rem',
         xxlarge: '4rem',
+        xxxlarge: '6rem'
     },
     borderRadius: '4px',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
@@ -60,6 +62,7 @@ export const darkTheme = {
         large: '1.5rem',
         xlarge: '2rem',
         xxlarge: '3rem',
+        xxxlarge: '6rem'
     },
     spacing: {
         small: '0.5rem',
@@ -67,6 +70,7 @@ export const darkTheme = {
         large: '2rem',
         xlarge: '3rem',
         xxlarge: '4rem',
+
     },
     borderRadius: '4px',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',

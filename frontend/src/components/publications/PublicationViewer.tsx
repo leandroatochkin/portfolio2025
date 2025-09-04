@@ -3,10 +3,11 @@ import Skills from './category/Skills';
 import Projects from './category/Projects';
 import Resume from './category/Resume';
 import Contact from './category/Contact';
+import Home from './category/Home';
 
 
 
-type Section = 'skills' | 'certificates' | 'projects' | 'resume' | 'contact' | undefined
+type Section = 'skills' | 'home' | 'projects' | 'resume' | 'contact' | undefined
 
 const PublicationViewer = () => {
 const { section } = useParams<{ section: Section }>();
@@ -21,6 +22,8 @@ const publicationMapper = (section: Section) => {
             return <Resume />
         case 'contact':
             return <Contact />
+        case 'home':
+            return <Home />
         // Add cases for other categories like 'blogs', 'articles', etc.
         default:
             return <div>Category not found</div>;

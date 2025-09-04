@@ -59,7 +59,6 @@ export const projects: Project[] = [
             'Redux/RTK'
         ]
     },
-
     {
         title: 'Order Tracking App',
         pictures: [
@@ -97,6 +96,35 @@ export const projects: Project[] = [
         ],
         repo: 'https://github.com/leandroatochkin/pampatokenlanding',
         demo: 'https://www.pampatokens.com.ar'
+    },
+    {
+        title: 'Order Tracking App',
+        pictures: [
+            '/projects/elea/elea.png',
+        ],
+        description: 'A blank slate app to track item progression through a RESTful API. The objective is to fork this app and adapt it to each customer needs.',
+        stack: [
+            'typescript',
+            'react',
+            'Express',
+            'PSQL',
+        ],
+        repo: 'https://github.com/leandroatochkin/ELEA',
+        demo: 'https://elea-frontend.onrender.com/?itemId=123456789123456789123456789123456789'
+    },
+    {
+        title: 'Landing Page',
+        pictures: [
+            '/projects/landing/landing.png',
+        ],
+        description: 'Simple landing page for a sustainability focused business.',
+        stack: [
+            'javascript',
+            'astro',
+            'GSAP',
+        ],
+        repo: 'https://github.com/leandroatochkin/sustainabilitylanding',
+        demo: 'https://sustainabilitylanding.vercel.app/'
     },
     
 ]

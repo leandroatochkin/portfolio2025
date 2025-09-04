@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StepBack, StepForward, Github } from "lucide-react";
 import type { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
+import { handleMouseEnter, handleMouseLeave } from "../utils";
 
 export interface Project {
   title: string;
@@ -11,6 +12,8 @@ export interface Project {
   repo?: string;
   stack?: string[];
 }
+
+
 
 const ProjectCard: React.FC<Project> = ({
   title,
@@ -35,8 +38,12 @@ const ProjectCard: React.FC<Project> = ({
     setCurrentImageIndex(index);
   };
 
+
+
   return (
     <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       style={{
         background: theme.colors.surface,
         borderRadius: "8px",
