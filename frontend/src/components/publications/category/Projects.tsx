@@ -1,4 +1,3 @@
-import React from 'react'
 import { useMobile } from '../../../hooks/hooks'
 import { projects } from '../../../data/projects'
 import ProjectCard from '../../cards/ProjectCard'

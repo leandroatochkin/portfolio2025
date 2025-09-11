@@ -60,21 +60,6 @@ export const projects: Project[] = [
         ]
     },
     {
-        title: 'Order Tracking App',
-        pictures: [
-            '/projects/elea/elea.png',
-        ],
-        description: 'A blank slate app to track item progression through a RESTful API. The objective is to fork this app and adapt it to each customer needs.',
-        stack: [
-            'typescript',
-            'react',
-            'Express',
-            'PSQL',
-        ],
-        repo: 'https://github.com/leandroatochkin/ELEA',
-        demo: 'https://elea-frontend.onrender.com/?itemId=123456789123456789123456789123456789'
-    },
-    {
         title: 'Pampa Tokens',
         pictures: [
             '/projects/pampatokens/pt1.png',

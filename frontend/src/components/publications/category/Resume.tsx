@@ -2,6 +2,7 @@ import { jobs } from "../../../data/jobs"
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../../store/store';
 import { useNavigate } from "react-router-dom";
+import DownloadButton from "../../buttons/DownloadButton";
 
 
 export const Resume = () => {
@@ -191,7 +192,17 @@ const theme = useSelector((state: RootState) => state.theme);
           onClick={()=>navigate('/contact',{viewTransition: true})}
           >🔍 Open to New Opportunities</div>
         </div>
-
+        <div
+        style={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: '20px',
+          marginLeft: '20px'
+        }}
+        >
+          <DownloadButton />
+        </div>
         {jobs.map((job, index) => (
           <div key={index} style={timelineStyles.jobItem}>
             <div

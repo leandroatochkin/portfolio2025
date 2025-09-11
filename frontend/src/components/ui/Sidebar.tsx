@@ -16,11 +16,10 @@ const Sidebar: React.FC<SidebarProps> = ({ open, setOpen }) => {
   const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const sidebarLinks = [
-    { name: "Home", link: "/home" },
+    { name: "Home", link: "/" },
     { name: "Skills", link: "/skills" },
     { name: "Projects", link: "/projects" },
     { name: "Resume", link: "/resume" },
-    { name: "Contact", link: "/contact" },
   ];
 
   useLayoutEffect(() => {

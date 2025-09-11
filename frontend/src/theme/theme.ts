@@ -70,7 +70,7 @@ export const darkTheme = {
         large: '2rem',
         xlarge: '3rem',
         xxlarge: '4rem',
-
+        xxxlarge: '6rem'
     },
     borderRadius: '4px',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',

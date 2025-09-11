@@ -59,6 +59,10 @@ export const frontend = [
         image: '/logos/tailwind.svg'
     },
     {
+        tech: 'Vue.js',
+        image: '/logos/vuejs.svg'
+    },
+    {
         tech: 'zustand',
         image: '/logos/zustand.svg'
     },

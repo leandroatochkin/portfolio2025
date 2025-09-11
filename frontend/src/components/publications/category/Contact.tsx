@@ -1,8 +1,8 @@
-import React from 'react'
 import type { RootState } from '../../../store/store';
 import { useSelector } from 'react-redux';
 import { Github, Mail, Linkedin } from 'lucide-react';
 import { handleMouseEnter, handleMouseLeave } from '../../utils';
+import DownloadButton from '../../buttons/DownloadButton';
 //import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
@@ -10,17 +10,7 @@ const theme = useSelector((state: RootState) => state.theme);
 
 
   return (
-    <div
-    style={{
-        background: 'transparent',
-        height: '100dvh',
-        width: '100vw',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }}
-    >
+    
                 <div
                 style={{
                     background: theme.colors.surface,
@@ -37,11 +27,13 @@ const theme = useSelector((state: RootState) => state.theme);
                         color: theme.colors.text
                     }}
                     >
-                        contact
+                        say hello!
                     </h1>
+                    <DownloadButton />
                     <p
                     style={{
-                        color: theme.colors.text
+                        color: theme.colors.text,
+                        textAlign: 'center'
                     }}
                     >
                         I'd love to hear from you! Whether you have a project in mind, want to collaborate, or just want to say hello, feel free to reach out.
@@ -91,7 +83,7 @@ const theme = useSelector((state: RootState) => state.theme);
                         
                     </div>
                 </div>
-    </div>
+
   )
 }
 
