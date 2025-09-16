@@ -22,7 +22,7 @@ const isMobile = useMobile()
                     borderRadius: theme.borderRadius,
                     width: '60%',
                     height: 'fit-content',
-                    maxHeight: '50%'
+                    maxHeight: '70%'
                 }}
                 >
                     <h1
