@@ -21,7 +21,7 @@ const isMobile = useMobile();
     >
         <div
         style={{
-            height: !isMobile ? '90%' : '70%',
+            height: !isMobile ? '90%' : 'fit-content',
             paddingBottom: '1rem',
             width: !isMobile ? '80%' : '85%',
             background: `linear-gradient(135deg, #1f2937 0%, #8b5cf6 100%)`,
