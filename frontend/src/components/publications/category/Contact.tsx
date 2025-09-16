@@ -21,7 +21,8 @@ const isMobile = useMobile()
                     padding: !isMobile ?  theme.spacing.medium : theme.spacing.small,
                     borderRadius: theme.borderRadius,
                     width: '60%',
-                    maxHeight: '40%'
+                    height: 'fit-content',
+                    maxHeight: '50%'
                 }}
                 >
                     <h1

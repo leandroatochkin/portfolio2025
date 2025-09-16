@@ -21,9 +21,9 @@ const isMobile = useMobile();
     >
         <div
         style={{
-            height: '90%',
+            height: !isMobile ? '90%' : '70%',
             paddingBottom: '1rem',
-            width: '85%',
+            width: !isMobile ? '80%' : '85%',
             background: `linear-gradient(135deg, #1f2937 0%, #8b5cf6 100%)`,
             borderRadius: theme.borderRadius,
             display: 'flex',
