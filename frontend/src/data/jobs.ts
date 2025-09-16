@@ -1,5 +1,15 @@
 export const jobs = [
-       
+        {
+          id: "5",
+          title: "Frontend Developer",
+          company: "1bit",
+          startDate: "2025-09",
+          //endDate: '2025-07',
+          description: `
+          • Develop websites using Vue.js, HTML, CSS and GlobalBluePoint.
+          `,
+          current: true,
+        },
         {
           id: "4",
           title: "Fullstack Developer",

@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux';
 import { Github, Mail, Linkedin } from 'lucide-react';
 import { handleMouseEnter, handleMouseLeave } from '../../utils';
 import DownloadButton from '../../buttons/DownloadButton';
+import { useMobile } from '../../../hooks/hooks';
 //import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
 const theme = useSelector((state: RootState) => state.theme);
-
+const isMobile = useMobile()
 
   return (
     
@@ -17,14 +18,17 @@ const theme = useSelector((state: RootState) => state.theme);
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    padding: theme.spacing.large,
+                    padding: !isMobile ?  theme.spacing.medium : theme.spacing.small,
                     borderRadius: theme.borderRadius,
                     width: '60%',
+                    maxHeight: '40%'
                 }}
                 >
                     <h1
                     style={{
-                        color: theme.colors.text
+                        color: theme.colors.text,
+                        fontSize: !isMobile ? theme.fontSizes.xxlarge : theme.fontSizes.large,
+                        margin: '0 0 0.5rem 0'
                     }}
                     >
                         say hello!
@@ -33,7 +37,8 @@ const theme = useSelector((state: RootState) => state.theme);
                     <p
                     style={{
                         color: theme.colors.text,
-                        textAlign: 'center'
+                        textAlign: 'center',
+                        fontSize: !isMobile ? theme.fontSizes.medium : theme.fontSizes.small
                     }}
                     >
                         I'd love to hear from you! Whether you have a project in mind, want to collaborate, or just want to say hello, feel free to reach out.
@@ -44,7 +49,7 @@ const theme = useSelector((state: RootState) => state.theme);
                         justifyContent: 'space-evenly',
                         alignItems: 'center',
                         width: '100%',
-                        marginTop: theme.spacing.large,
+                        marginTop: !isMobile ? theme.spacing.medium : 0
                     }}
                     >   
                     <div

@@ -21,7 +21,7 @@ const isMobile = useMobile();
     >
         <div
         style={{
-            height: 'fit-content',
+            height: '90%',
             paddingBottom: '1rem',
             width: '85%',
             background: `linear-gradient(135deg, #1f2937 0%, #8b5cf6 100%)`,
@@ -37,6 +37,7 @@ const isMobile = useMobile();
                 color: '#ffffff',
                 fontSize: !isMobile ? theme.fontSizes.xxxlarge : theme.fontSizes.xxlarge,
                 textAlign: 'center',
+                margin: 0
             }}
             >
                 Leandro Atochkin
@@ -48,7 +49,7 @@ const isMobile = useMobile();
                 textAlign: 'center',
             }}
             >
-                Fullstack developer | Builder | Product oriented | Learner
+                {`Fullstack developer | Builder ${!isMobile ? '|' : ''} Product oriented | Learner`}
             </p>
               <Contact />
         </div>
